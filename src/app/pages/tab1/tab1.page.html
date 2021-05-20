@@ -1,0 +1,16 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Pendientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+  <ion-list color="dark">
+    <ion-item *ngFor="let lista of listaDeseos" detail color="dark">
+      <ion-label>{{lista.titulo}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>
