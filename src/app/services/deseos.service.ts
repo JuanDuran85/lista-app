@@ -11,9 +11,6 @@ export class DeseosService {
 
   constructor(){
     this.leerStorage();
-/*     const lista1 = new Lista('Primera tarea a realizar');
-    const lista2 = new Lista('Segunda tarea a realizar');
-    this.listas.push(lista1, lista2); */
   }
 
   crearLista(titulo: string): number{
@@ -21,6 +18,11 @@ export class DeseosService {
     this.listas.push(nuevaLista);
     this.guardarStorage();
     return nuevaLista.id;
+  }
+
+  cargarLista(id: string | number): Lista{
+    id = Number(id);
+    return this.listas.find(dataLista => dataLista.id === id);
   }
 
   guardarStorage(): void{
