@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DeseosService } from './../../services/deseos.service';
-import { ListaInter } from './../../interfaces/lista-item.interface';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -11,13 +10,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
-  public listaDeseos: ListaInter[] = [];
-
   constructor(public deseosSer: DeseosService, private router: Router, private alertController: AlertController) {}
 
-  ngOnInit(): void {
-    this.listaDeseos = this.deseosSer.listas;
-  }
+  ngOnInit(): void {}
 
   async agregarLista() {
     const alert = await this.alertController.create({
@@ -51,5 +46,4 @@ export class Tab1Page implements OnInit {
 
     alert.present();
   }
-
 }
